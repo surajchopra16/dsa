@@ -6,7 +6,7 @@
 
 // Solution:
 // - Brute force approach: Create two separate arrays for positive and negative numbers, then merge them by alternating elements from both arrays (work for both types of questions)
-// - Optimal approach: Use two pointers to place positive and negative numbers in the correct positions in a single pass (work for only a type of question)
+// - Optimal approach: Use two pointers to place positive and negative numbers in the correct positions (work for only a type of question)
 
 // Time complexity:
 // - Brute force approach: 2 * O(n)
