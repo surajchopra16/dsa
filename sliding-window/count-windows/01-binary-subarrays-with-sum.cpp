@@ -2,6 +2,8 @@
 // - Leetcode: https://leetcode.com/problems/binary-subarrays-with-sum/description
 // - Return the number of non-empty subarrays that have a sum equal to goal
 
+// ⚠️ Important note: Avoid using the standard sliding window technique on binary arrays, because it may not work correctly due to the presence of 0s and use a modified approach instead
+
 // Solution:
 // - Brute force approach: Generate all possible subarrays and count the number of subarrays with sum equal to the given goal
 // - Optimal approach: Use the sliding window technique to find the number of subarrays with sum at most equal to the given goal and subtract the number of subarrays with sum at most equal to the given goal - 1
