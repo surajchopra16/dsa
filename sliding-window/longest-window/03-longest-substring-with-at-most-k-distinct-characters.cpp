@@ -1,7 +1,8 @@
-// Problem: Longest substring with at most K distinct characters (Similar to fruit into baskets problem)
+// Problem: Longest substring with at most K distinct characters
 // - Leetcode: https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters/description (Premium)
 // - GFG: https://www.geeksforgeeks.org/problems/longest-k-unique-characters-substring0853/1 (Similar)
 // - Return the length of the longest substring that contains at most K distinct characters
+// - Similar to the fruit into baskets problem
 
 // Solution:
 // - Brute force approach: Generate all possible substrings and check if they contain at most K distinct characters. Keep track of the maximum length of such substrings
