@@ -2,6 +2,10 @@
 // - Leetcode: https://leetcode.com/problems/longest-substring-without-repeating-characters/description
 // - Return the length of the longest substring without repeating characters
 
+// ⭐ Longest window approach:
+// - Expand the window until the window is valid to get the longest window
+// - Shrink the window until the window is invalid
+
 // Solution:
 // - Brute force approach: Generate all possible substrings and check if they contain repeating characters and keep track of the maximum length of valid substrings
 // - Better approach: Use a sliding window approach with two pointers and a frequency array. Expand the window with the right pointer and shrink the window with the left pointer when a repeating character is found

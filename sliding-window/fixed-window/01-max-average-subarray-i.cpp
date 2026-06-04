@@ -4,6 +4,7 @@
 
 // Similar problem:
 // - Leetcode: https://leetcode.com/problems/number-of-sub-arrays-of-size-k-and-average-greater-than-or-equal-to-threshold/description
+// - Leetcode: https://leetcode.com/problems/maximum-points-you-can-obtain-from-cards/description (⭐ Important)
 
 // Solution:
 // - Brute force approach: Generate all possible subarrays of length k, calculate their sums, and keep track of the maximum sum and finally return the maximum average by dividing the maximum sum by k
