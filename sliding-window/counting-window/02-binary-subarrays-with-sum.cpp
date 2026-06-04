@@ -4,7 +4,9 @@
 
 // ⭐ Formula:
 // - Number of subarrays with exactly k = Number of subarrays with at most k - Number of subarrays with at most k - 1
+// - Number of subarrays with exactly k = Number of subarrays with at least k - Number of subarrays with at least k + 1
 // - Exactly (K) = At most (K) - At most (K - 1)
+// - Exactly (K) = At least (K) - At least (K + 1)
 
 // Solution:
 // - Brute force approach: Generate all possible subarrays and check if the sum of the subarray is equal to the goal

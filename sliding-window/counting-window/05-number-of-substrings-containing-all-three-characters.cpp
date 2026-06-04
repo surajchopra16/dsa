@@ -2,6 +2,9 @@
 // - Leetcode: https://leetcode.com/problems/number-of-substrings-containing-all-three-characters/description
 // - Return the number of substrings that contain at least one occurrence of all three characters: a, b, and c
 
+// Similar problem:
+// - Leetcode: https://leetcode.com/problems/count-of-substrings-containing-every-vowel-and-k-consonants-ii/description
+
 // ⭐ Formula:
 // - Once we have a valid window (contains all three characters), all its extensions to the right will also be valid
 // - Number of valid substrings = (n - right)

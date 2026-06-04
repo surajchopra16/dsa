@@ -1,7 +1,9 @@
 // Problem: Maximum average subarray I
 // - Leetcode: https://leetcode.com/problems/maximum-average-subarray-i/description
-// - Leetcode: https://leetcode.com/problems/number-of-sub-arrays-of-size-k-and-average-greater-than-or-equal-to-threshold/description (similar problem)
 // - Return the maximum average value of a subarray of length k
+
+// Similar problem:
+// - Leetcode: https://leetcode.com/problems/number-of-sub-arrays-of-size-k-and-average-greater-than-or-equal-to-threshold/description
 
 // Solution:
 // - Brute force approach: Generate all possible subarrays of length k, calculate their sums, and keep track of the maximum sum and finally return the maximum average by dividing the maximum sum by k

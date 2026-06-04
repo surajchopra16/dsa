@@ -1,7 +1,9 @@
 // Problem: Permutation in string
 // - Leetcode: https://leetcode.com/problems/permutation-in-string/description
-// - Leetcode: https://leetcode.com/problems/find-all-anagrams-in-a-string/description (similar problem)
 // - Return true if one of s1's permutations is the substring of s2
+
+// Similar problem:
+// - Leetcode: https://leetcode.com/problems/find-all-anagrams-in-a-string/description
 
 // Solution:
 // - Optimal approach: Use a sliding window of size k (length of s1) and maintain frequency counts of characters in the current window of s2 and compare with frequency counts of s1
