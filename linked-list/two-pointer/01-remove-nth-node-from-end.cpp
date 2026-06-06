@@ -2,9 +2,11 @@
 // - Leetcode: https://leetcode.com/problems/remove-nth-node-from-end-of-list/description
 // - Return the head after removing the nth node from the end of the linked list
 
+// ⭐ Edge case: If the length is equal to n, then we need to remove the head node
+
 // Solution:
 // - Brute force approach: Find the length of the linked list and then remove the nth node from the end
-// - Optimal approach: Use two pointers (slow and fast) to find the nth node from the end in one pass by moving the fast pointer n steps ahead and then moving both pointers until the fast pointer reaches the end
+// - Optimal approach: Use two pointers to find the nth node from the end in one pass by moving the second pointer n steps ahead and then moving both pointers until the second pointer reaches the end
 
 // Time complexity:
 // - Brute force approach: O(n + n)
@@ -39,6 +41,7 @@ int main()
     head->next->next = new Node(3);
     head->next->next->next = new Node(4);
     head->next->next->next->next = new Node(5);
+
     int n = 2;
 
     // 1. Brute force approach:
@@ -81,7 +84,6 @@ int main()
     for (int i = 0; i < n; i++)
         fast = fast->next;
 
-    // Edge case
     if (fast == nullptr)
     {
         Node *temp = head;

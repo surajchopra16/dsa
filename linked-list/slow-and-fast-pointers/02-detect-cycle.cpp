@@ -3,7 +3,7 @@
 // - Return true if there is a cycle in the linked list
 
 // ⭐ Detect cycle:
-// - Use the floyd's cycle detection algorithm
+// - When the slow and fast pointers meet, there is a cycle (Floyd's cycle detection algorithm)
 // - If there is a cycle, the fast pointer will eventually meet the slow pointer because the fast pointer moves two steps towards the slow pointer and slow pointer moves one step towards the fast pointer, thus reducing the distance between them by one step each iteration (2 - 1 = 1)
 
 // Solution:

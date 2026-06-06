@@ -2,6 +2,9 @@
 // - GFG: https://www.geeksforgeeks.org/problems/find-length-of-loop/1
 // - Return the length of the cycle in a linked list
 
+// ⭐ Length of cycle:
+// - When the slow and fast pointers meet, we can keep one pointer fixed and move the other pointer until they meet again, counting the number of steps will give us the length of the cycle
+
 // Solution:
 // - Brute force approach: Use a map to store the visited nodes and their indices, and when we encounter a visited node, we can calculate the length of the cycle by (current index - index of the visited node)
 // - Optimal approach: Use the same approach as detecting a cycle, but when the slow and fast pointers meet, we can keep one pointer fixed and move the other pointer until they meet again

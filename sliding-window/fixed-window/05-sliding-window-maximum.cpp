@@ -58,7 +58,7 @@ int main()
     deque<int> dq;
     for (int i = 0; i < k; i++)
     {
-        while (!dq.empty() && nums[dq.back()] < nums[i])
+        while (!dq.empty() && nums[i] > nums[dq.back()])
             dq.pop_back();
         dq.push_back(i);
     }
@@ -70,7 +70,7 @@ int main()
         while (!dq.empty() && dq.front() < i - k + 1)
             dq.pop_front();
 
-        while (!dq.empty() && nums[dq.back()] < nums[i])
+        while (!dq.empty() && nums[i] > nums[dq.back()])
             dq.pop_back();
         dq.push_back(i);
 

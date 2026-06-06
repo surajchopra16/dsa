@@ -2,6 +2,9 @@
 // - Leetcode: https://leetcode.com/problems/linked-list-cycle-ii/
 // - Return the node where the cycle begins
 
+// ⭐ Start node of cycle:
+// - When the slow and fast pointers meet, reset one pointer to the head and move both pointers one step at a time until they meet again, the node where they meet will be the starting node of the cycle
+
 // Solution:
 // - Brute force approach: Use a map to store the visited nodes, and check if the node is already visited before
 // - Optimal approach: Use the same approach as detecting a cycle, but when the slow and fast pointers meet, reset one pointer to the head and move both pointers one step at a time until they meet again

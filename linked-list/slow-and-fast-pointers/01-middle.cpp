@@ -7,7 +7,7 @@
 // - Initially, we move the fast pointer two steps ahead and then apply the slow and fast pointer approach to land on the node just before the middle node
 
 // ⭐ Middle node:
-// - Use the tortoise and hare algorithm
+// - Move the slow pointer by one step and the fast pointer by two steps (tortoise and hare algorithm)
 // - For odd number of nodes, return the middle node
 // - For even number of nodes, return the second middle node
 // - Middle node is (n/2 + 1)th node
