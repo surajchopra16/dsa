@@ -1,6 +1,6 @@
 // Problem: Reverse a linked list
 // - Leetcode: https://leetcode.com/problems/reverse-linked-list/description
-// - Return the reversed linked list
+// - Return the head of the linked list after reversing it
 
 // Solution:
 // - Brute force approach: Use a stack to store the values of the linked list and then pop the values from the stack and update the linked list to reverse it
