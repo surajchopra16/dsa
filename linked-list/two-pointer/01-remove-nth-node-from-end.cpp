@@ -2,7 +2,9 @@
 // - Leetcode: https://leetcode.com/problems/remove-nth-node-from-end-of-list/description
 // - Return the head after removing the nth node from the end of the linked list
 
-// ⭐ Edge case: If the length is equal to n, then we need to remove the head node
+// Similar problem:
+// - Leetcode: https://leetcode.com/problems/swapping-nodes-in-a-linked-list/description
+// - We have to land on the kth node from the start and end and then swap their values
 
 // Solution:
 // - Brute force approach: Find the length of the linked list and then remove the nth node from the end
@@ -33,6 +35,18 @@ public:
         this->next = nullptr;
     }
 };
+
+// Print the linked list
+void printLinkedList(Node *head)
+{
+    Node *curr = head;
+    while (curr != nullptr)
+    {
+        cout << curr->data << " ";
+        curr = curr->next;
+    }
+    cout << endl;
+}
 
 int main()
 {
@@ -78,19 +92,14 @@ int main()
     // delete temp;
 
     // 2. Optimal approach:
-    Node *slow = head;
-    Node *fast = head;
+    Node *dummy = new Node(-1);
+    dummy->next = head;
+
+    Node *slow = dummy;
+    Node *fast = dummy;
 
     for (int i = 0; i < n; i++)
         fast = fast->next;
-
-    if (fast == nullptr)
-    {
-        Node *temp = head;
-        head = head->next;
-        delete temp;
-        return 0;
-    }
 
     while (fast->next != nullptr)
     {
@@ -101,6 +110,8 @@ int main()
     Node *temp = slow->next;
     slow->next = slow->next->next;
     delete temp;
+
+    printLinkedList(dummy->next);
 
     return 0;
 }
