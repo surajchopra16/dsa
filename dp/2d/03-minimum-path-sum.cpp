@@ -68,13 +68,13 @@ int main()
     int m = grid.size();
     int n = grid[0].size();
 
-    // 1. Memoization:
+    // (1) Memoization:
     vector<vector<int>> dp(m, vector<int>(n, -1));
 
     int pathMemo = minPathMemo(m - 1, n - 1, grid, dp);
     cout << "Minimum path sum: " << pathMemo << endl;
 
-    // 2. Tabulation:
+    // (2) Tabulation:
     int pathTab = minPathTab(m - 1, n - 1, grid);
     cout << "Minimum path sum: " << pathTab << endl;
 

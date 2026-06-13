@@ -55,7 +55,6 @@ int uniquePathsTab(int m, int n, vector<vector<int>> obstacles)
                 dp[i][j] = 1;
             else
             {
-
                 int up = (i > 0) ? dp[i - 1][j] : 0;
                 int left = (j > 0) ? dp[i][j - 1] : 0;
 
@@ -75,13 +74,13 @@ int main()
     int m = obstacles.size();
     int n = obstacles[0].size();
 
-    // 1. Memoization:
+    // (1) Memoization:
     vector<vector<int>> dp(m, vector<int>(n, -1));
 
     int pathsMemo = uniquePathsMemo(m - 1, n - 1, obstacles, dp);
     cout << "Number of unique paths: " << pathsMemo << endl;
 
-    // 2. Tabulation:
+    // (2) Tabulation:
     int pathsTab = uniquePathsTab(m - 1, n - 1, obstacles);
     cout << "Number of unique paths: " << pathsTab << endl;
 

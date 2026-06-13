@@ -73,15 +73,14 @@ int uniquePathsOptimized(int m, int n)
         for (int j = 0; j <= n; j++)
         {
             if (i == 0 && j == 0)
-            {
                 curr[j] = 1;
-                continue;
-            };
+            else
+            {
+                int up = curr[j];
+                int left = (j > 0) ? curr[j - 1] : 0;
 
-            int up = curr[j];
-            int left = (j > 0) ? curr[j - 1] : 0;
-
-            curr[j] = up + left;
+                curr[j] = up + left;
+            }
         }
     }
 
@@ -93,13 +92,13 @@ int main()
     int m = 3;
     int n = 7;
 
-    // 1. Memoization:
+    // (1) Memoization:
     vector<vector<int>> dp(m, vector<int>(n, -1));
 
     int pathsMemo = uniquePathsMemo(m - 1, n - 1, dp);
     cout << "Number of unique paths: " << pathsMemo << endl;
 
-    // 2. Tabulation:
+    // (2) Tabulation:
     int pathsTab = uniquePathsTab(m - 1, n - 1);
     cout << "Number of unique paths: " << pathsTab << endl;
 
@@ -108,7 +107,7 @@ int main()
     // [1, 2, 3]
     // [1, 3, 6]
 
-    // 3. Space optimized:
+    // (3) Space optimized:
     int pathsOptimized = uniquePathsOptimized(m - 1, n - 1);
     cout << "Number of unique paths: " << pathsOptimized << endl;
 
