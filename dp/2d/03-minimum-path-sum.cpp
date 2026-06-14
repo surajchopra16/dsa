@@ -2,8 +2,6 @@
 // - Leetcode: https://leetcode.com/problems/minimum-path-sum/description
 // - Return the minimum path sum from top left to bottom right
 
-// ⭐ Pattern: Min or max to reach a target
-
 // Time complexity:
 // - Memoization: O(m * n)
 // - Tabulation: O(m * n)
@@ -18,32 +16,32 @@
 using namespace std;
 
 // Minimum path sum problem using memoization
-int minPathMemo(int m, int n, vector<vector<int>> grid, vector<vector<int>> &dp)
+int minPathMemo(int i, int j, vector<vector<int>> grid, vector<vector<int>> &dp)
 {
-    if (m == 0 && n == 0)
-        return grid[m][n];
+    if (i == 0 && j == 0)
+        return grid[i][j];
 
-    if (m < 0 || n < 0)
+    if (i < 0 || j < 0)
         return INT_MAX;
 
-    if (dp[m][n] != -1)
-        return dp[m][n];
+    if (dp[i][j] != -1)
+        return dp[i][j];
 
-    int up = minPathMemo(m - 1, n, grid, dp);
-    int left = minPathMemo(m, n - 1, grid, dp);
+    int up = minPathMemo(i - 1, j, grid, dp);
+    int left = minPathMemo(i, j - 1, grid, dp);
 
-    dp[m][n] = grid[m][n] + min(up, left);
-    return dp[m][n];
+    dp[i][j] = grid[i][j] + min(up, left);
+    return dp[i][j];
 }
 
 // Minimum path sum problem using tabulation
 int minPathTab(int m, int n, vector<vector<int>> grid)
 {
-    vector<vector<int>> dp(m + 1, vector<int>(n + 1, 0));
+    vector<vector<int>> dp(m, vector<int>(n, 0));
 
-    for (int i = 0; i <= m; i++)
+    for (int i = 0; i < m; i++)
     {
-        for (int j = 0; j <= n; j++)
+        for (int j = 0; j < n; j++)
         {
             if (i == 0 && j == 0)
                 dp[i][j] = grid[i][j];
@@ -57,7 +55,7 @@ int minPathTab(int m, int n, vector<vector<int>> grid)
         }
     }
 
-    return dp[m][n];
+    return dp[m - 1][n - 1];
 }
 
 int main()
@@ -75,7 +73,7 @@ int main()
     cout << "Minimum path sum: " << pathMemo << endl;
 
     // (2) Tabulation:
-    int pathTab = minPathTab(m - 1, n - 1, grid);
+    int pathTab = minPathTab(m, n, grid);
     cout << "Minimum path sum: " << pathTab << endl;
 
     // DP table for the above grid:

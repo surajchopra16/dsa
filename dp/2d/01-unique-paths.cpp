@@ -2,7 +2,7 @@
 // - Leetcode: https://leetcode.com/problems/unique-paths/description
 // - Return the number of possible unique paths that the robot can take to reach the bottom-right corner
 
-// ⭐ Pattern: Count the number of distinct ways
+// ⭐ Pattern: One starting point and one ending point
 
 // Time complexity:
 // - Memoization: O(m * n)
@@ -20,32 +20,32 @@
 using namespace std;
 
 // Unique paths problem using memoization
-int uniquePathsMemo(int m, int n, vector<vector<int>> &dp)
+int uniquePathsMemo(int i, int j, vector<vector<int>> &dp)
 {
-    if (m == 0 && n == 0)
+    if (i == 0 && j == 0)
         return 1;
 
-    if (m < 0 || n < 0)
+    if (i < 0 || j < 0)
         return 0;
 
-    if (dp[m][n] != -1)
-        return dp[m][n];
+    if (dp[i][j] != -1)
+        return dp[i][j];
 
-    int up = uniquePathsMemo(m - 1, n, dp);
-    int left = uniquePathsMemo(m, n - 1, dp);
+    int up = uniquePathsMemo(i - 1, j, dp);
+    int left = uniquePathsMemo(i, j - 1, dp);
 
-    dp[m][n] = up + left;
-    return dp[m][n];
+    dp[i][j] = up + left;
+    return dp[i][j];
 }
 
 // Unique paths problem using tabulation
 int uniquePathsTab(int m, int n)
 {
-    vector<vector<int>> dp(m + 1, vector<int>(n + 1, 0));
+    vector<vector<int>> dp(m, vector<int>(n, 0));
 
-    for (int i = 0; i <= m; i++)
+    for (int i = 0; i < m; i++)
     {
-        for (int j = 0; j <= n; j++)
+        for (int j = 0; j < n; j++)
         {
             if (i == 0 && j == 0)
                 dp[i][j] = 1;
@@ -59,18 +59,18 @@ int uniquePathsTab(int m, int n)
         }
     }
 
-    return dp[m][n];
+    return dp[m - 1][n - 1];
 }
 
 // Unique paths problem using space optimization
 int uniquePathsOptimized(int m, int n)
 {
     // Combine the previous row and current row answers into a single array
-    vector<int> curr(n + 1, 0);
+    vector<int> curr(n, 0);
 
-    for (int i = 0; i <= m; i++)
+    for (int i = 0; i < m; i++)
     {
-        for (int j = 0; j <= n; j++)
+        for (int j = 0; j < n; j++)
         {
             if (i == 0 && j == 0)
                 curr[j] = 1;
@@ -84,7 +84,7 @@ int uniquePathsOptimized(int m, int n)
         }
     }
 
-    return curr[n];
+    return curr[n - 1];
 }
 
 int main()
@@ -99,7 +99,7 @@ int main()
     cout << "Number of unique paths: " << pathsMemo << endl;
 
     // (2) Tabulation:
-    int pathsTab = uniquePathsTab(m - 1, n - 1);
+    int pathsTab = uniquePathsTab(m, n);
     cout << "Number of unique paths: " << pathsTab << endl;
 
     // DP table:
@@ -108,7 +108,7 @@ int main()
     // [1, 3, 6]
 
     // (3) Space optimized:
-    int pathsOptimized = uniquePathsOptimized(m - 1, n - 1);
+    int pathsOptimized = uniquePathsOptimized(m, n);
     cout << "Number of unique paths: " << pathsOptimized << endl;
 
     return 0;
